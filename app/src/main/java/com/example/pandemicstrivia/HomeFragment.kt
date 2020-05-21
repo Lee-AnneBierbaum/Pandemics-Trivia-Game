@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pandemicstrivia.databinding.FragmentHomeBinding
 
 /**
@@ -24,7 +25,21 @@ class HomeFragment : Fragment() {
         binding.cat1.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_detailFragment)
         )
+        val categoryList = generateDummyList(100)
+        binding.categoryList.adapter = CategoryAdapter(categoryList)
+        binding.categoryList.layoutManager = LinearLayoutManager(context)
+        binding.categoryList.setHasFixedSize(true)
         return binding.root
+    }
+
+    private fun generateDummyList(size: Int): List<CategoryItem> {
+        val list = ArrayList<CategoryItem>()
+        for (i in 0 until size){
+            val item = CategoryItem("Category $i")
+            list += item
+
+        }
+        return list
     }
 
 }
