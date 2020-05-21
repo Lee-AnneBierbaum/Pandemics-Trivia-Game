@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PandemicsTrivia</string>
+    <string name="cat_1">COVID-19</string>
+    <string name="cat_2">CHOLERA</string>
+    <string name="cat_3">INFLUENZA</string>
+    <string name="start">Go</string>
+    <string name="question">The question will go here</string>
 </resources>
