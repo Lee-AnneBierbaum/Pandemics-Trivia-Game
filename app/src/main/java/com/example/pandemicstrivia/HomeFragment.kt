@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pandemicstrivia.databinding.FragmentHomeBinding
@@ -13,7 +15,9 @@ import com.example.pandemicstrivia.databinding.FragmentHomeBinding
 /**
  * A simple [Fragment] subclass.
  */
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), CategoryAdapter.OnCategoryItemClickListener  {
+
+    private val viewModel: GameViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +30,7 @@ class HomeFragment : Fragment() {
             Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_detailFragment)
         )
         val categoryList = generateDummyList(100)
-        binding.categoryList.adapter = CategoryAdapter(categoryList)
+        binding.categoryList.adapter = CategoryAdapter(categoryList, this)
         binding.categoryList.layoutManager = LinearLayoutManager(context)
         binding.categoryList.setHasFixedSize(true)
         return binding.root
@@ -40,6 +44,10 @@ class HomeFragment : Fragment() {
 
         }
         return list
+    }
+
+    override fun onCategoryClick(category: CategoryItem, position: Int, view: View) {
+        Toast.makeText(context, "Category Clicked ${category.name}", Toast.LENGTH_SHORT).show()
     }
 
 }

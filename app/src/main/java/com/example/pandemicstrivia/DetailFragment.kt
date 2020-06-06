@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.example.pandemicstrivia.databinding.FragmentDetailBinding
 
@@ -13,6 +14,8 @@ import com.example.pandemicstrivia.databinding.FragmentDetailBinding
  * A simple [Fragment] subclass.
  */
 class DetailFragment : Fragment() {
+
+    private val viewModel: GameViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
