@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pandemicstrivia.databinding.FragmentHomeBinding
 
@@ -26,28 +27,20 @@ class HomeFragment : Fragment(), CategoryAdapter.OnCategoryItemClickListener  {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_home, container, false)
         val binding: FragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-        binding.cat1.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_detailFragment)
-        )
-        val categoryList = generateDummyList(100)
+
+        val categoryList = viewModel.generateCategoryList
         binding.categoryList.adapter = CategoryAdapter(categoryList, this)
         binding.categoryList.layoutManager = LinearLayoutManager(context)
         binding.categoryList.setHasFixedSize(true)
         return binding.root
     }
 
-    private fun generateDummyList(size: Int): List<CategoryItem> {
-        val list = ArrayList<CategoryItem>()
-        for (i in 0 until size){
-            val item = CategoryItem("Category $i")
-            list += item
 
-        }
-        return list
-    }
 
     override fun onCategoryClick(category: CategoryItem, position: Int, view: View) {
-        Toast.makeText(context, "Category Clicked ${category.name}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Category Clicked ${category.name} ID: ${category.id}", Toast.LENGTH_SHORT).show()
+        viewModel.setupGame(category.id)
+        view.findNavController().navigate(R.id.action_homeFragment_to_detailFragment)
     }
 
 }
