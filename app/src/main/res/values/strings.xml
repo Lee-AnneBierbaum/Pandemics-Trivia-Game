@@ -5,4 +5,6 @@
     <string name="cat_3">INFLUENZA</string>
     <string name="start">Go</string>
     <string name="question">The question will go here</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

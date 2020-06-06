@@ -14,48 +14,66 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="124dp"
-            android:layout_marginTop="92dp"
+            android:layout_marginTop="60dp"
             android:text="@string/question"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/answerOne"
+        <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="89dp"
-            android:layout_marginBottom="488dp"
-            android:text="answer 1"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/doneButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/questionText"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/questionText">
+
+            <RadioButton
+                android:id="@+id/answerOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton"
+                tools:layout_editor_absoluteX="172dp"
+                tools:layout_editor_absoluteY="388dp" />
+
+            <RadioButton
+                android:id="@+id/answerTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton"
+                tools:layout_editor_absoluteX="172dp"
+                tools:layout_editor_absoluteY="388dp" />
+
+            <RadioButton
+                android:id="@+id/answerThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton"
+                tools:layout_editor_absoluteX="172dp"
+                tools:layout_editor_absoluteY="388dp" />
+
+        </RadioGroup>
 
         <Button
-            android:id="@+id/answerTwo"
+            android:id="@+id/doneButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="answer 2"
+            android:text="Done"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answerOne"
-            app:layout_constraintVertical_bias="0.101" />
+            app:layout_constraintTop_toBottomOf="@+id/questionText" />
 
-        <Button
-            android:id="@+id/answerThree"
+        <TextView
+            android:id="@+id/scoreText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="answer 3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="17dp"
+            android:text="TextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answerTwo"
-            app:layout_constraintVertical_bias="0.131" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
