@@ -13,6 +13,8 @@ class GameViewModel : ViewModel() {
     private val _score = MutableLiveData<Int>()
     private val _totalQuestions = MutableLiveData<Int>()
     private val _categoryQuestions = MutableLiveData<List<Question>>()
+    private val _categoryHeading = MutableLiveData<String>()
+    private val _categoryDescription = MutableLiveData<String>()
 
 
     fun setupGame(categoryId: Int){
@@ -22,12 +24,16 @@ class GameViewModel : ViewModel() {
         _currentQuestion.value = 0
         _score.value = 0
         _totalQuestions.value = 3
+        _categoryHeading.value = generateCategoryList[categoryId-1].name
+        _categoryDescription.value = generateCategoryList[categoryId-1].description
     }
 
     val question: LiveData<Question> = _question
     val currentQuestion: LiveData<Int> = _currentQuestion
     val score: LiveData<Int> = _score
     val totalQuestions: LiveData<Int> = _totalQuestions
+    val categoryHeading: LiveData<String> = _categoryHeading
+    val categoryDescription: LiveData<String> = _categoryDescription
 
     fun updateQuestion(index: Int){
         _question.value = _categoryQuestions.value?.get(index.plus(1))
@@ -45,9 +51,9 @@ class GameViewModel : ViewModel() {
 
 
     val generateCategoryList = listOf(
-        CategoryItem(1, "COVID-19"),
-        CategoryItem(2, "CHOLERA"),
-        CategoryItem(3, "INFLUENZA")
+        CategoryItem(1, "COVID-19", "The pandemic disease COVID-19, is the latest in the Coronavirus family. It emerged in December 2019 in Wuhan, China. This quiz will test and improve your knowledge on the pandemic."),
+        CategoryItem(2, "CHOLERA","need"),
+        CategoryItem(3, "INFLUENZA", "need")
     )
 
     private val questions = listOf(
