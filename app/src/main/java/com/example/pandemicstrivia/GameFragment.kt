@@ -38,7 +38,7 @@ class GameFragment : Fragment() {
 
         viewModel.currentQuestion.observe(viewLifecycleOwner, Observer{ NewCurrentQuestion ->
             var total =  viewModel.totalQuestions.value
-            binding.scoreText.text = "Question $NewCurrentQuestion of $total "
+            binding.currentQuestion.text = "Question ${NewCurrentQuestion.plus(1)} of $total "
 
         })
 

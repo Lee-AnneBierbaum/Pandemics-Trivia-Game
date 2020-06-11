@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.category_item.view.*
 
 class CategoryAdapter(
     private val categoryList: List<CategoryItem>,
-    var mClickListener : OnCategoryItemClickListener
+    private var mClickListener : OnCategoryItemClickListener
 ): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
