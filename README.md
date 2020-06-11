@@ -31,6 +31,12 @@ Learn more about the language [here](https://kotlinlang.org).
 ## Contributions
 Any suggestions or contributions to the project are welcome :)
 
+## Resources
+I made use of the following sources for accurate information on the pandemics within the application:
+1. COVID 19 (https://www.who.int/emergencies/diseases/novel-coronavirus-2019)
+2. CHOLERA (https://www.who.int/cholera/the-forgotten-pandemic/en/)
+3. INFLUENZA (https://www.cdc.gov/flu/about/keyfacts.htm)
+
 ## Plagiarism
 [Here](https://drive.google.com/file/d/11wv-d-pvzl9l7s7JFzL736V0EmhCM0vX/view?usp=sharing) is my plagiarism form as requested by my University.
 
