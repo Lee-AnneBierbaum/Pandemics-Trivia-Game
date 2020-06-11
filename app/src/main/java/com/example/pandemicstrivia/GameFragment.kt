@@ -31,8 +31,14 @@ class GameFragment : Fragment() {
        //return inflater.inflate(R.layout.fragment_game, container, false)
         val binding: FragmentGameBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false)
 
-        viewModel.score.observe(viewLifecycleOwner, Observer{ newScore ->
-            binding.scoreText.text = newScore.toString()
+//        viewModel.score.observe(viewLifecycleOwner, Observer{ newScore ->
+//            binding.scoreText.text = " Your current score $newScore"
+//
+//        })
+
+        viewModel.currentQuestion.observe(viewLifecycleOwner, Observer{ NewCurrentQuestion ->
+            var total =  viewModel.totalQuestions.value
+            binding.scoreText.text = "Question $NewCurrentQuestion of $total "
 
         })
 

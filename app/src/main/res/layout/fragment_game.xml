@@ -7,17 +7,21 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/appBackground">
 
         <TextView
             android:id="@+id/questionText"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="88dp"
+            android:fontFamily="@font/montserrat_extrabold"
             android:text="@string/question"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/grey"/>
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -26,43 +30,41 @@
             app:layout_constraintBottom_toTopOf="@+id/doneButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/questionText">
+            app:layout_constraintTop_toBottomOf="@+id/questionText"
+            >
 
             <RadioButton
                 android:id="@+id/answerOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_extrabold"
                 android:text="RadioButton"
                 tools:layout_editor_absoluteX="172dp"
-                tools:layout_editor_absoluteY="388dp" />
+                tools:layout_editor_absoluteY="388dp"
+                android:textColor="@color/grey"
+                />
 
             <RadioButton
                 android:id="@+id/answerTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_extrabold"
                 android:text="RadioButton"
                 tools:layout_editor_absoluteX="172dp"
-                tools:layout_editor_absoluteY="388dp" />
+                tools:layout_editor_absoluteY="388dp"
+                android:textColor="@color/grey"/>
 
             <RadioButton
                 android:id="@+id/answerThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_extrabold"
                 android:text="RadioButton"
+                android:textColor="@color/grey"
                 tools:layout_editor_absoluteX="172dp"
                 tools:layout_editor_absoluteY="388dp" />
 
         </RadioGroup>
-
-        <Button
-            android:id="@+id/doneButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Done"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/questionText" />
 
         <TextView
             android:id="@+id/scoreText"
@@ -70,9 +72,42 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="17dp"
             android:layout_marginTop="17dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textSize="12dp"
+            android:textColor="@color/white"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/doneButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="100dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/doneButtonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dp"
+                    android:fontFamily="@font/montserrat_extrabold"
+                    android:textColor="@color/grey"
+                    android:text="Next Question"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,7 +30,7 @@ class ScoreFragment : Fragment() {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_score, container, false)
         val binding: FragmentScoreBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_score, container, false)
-        binding.home.setOnClickListener(
+        binding.homeButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_scoreFragment_to_homeFragment)
         )
         val totalScore = viewModel.score.value

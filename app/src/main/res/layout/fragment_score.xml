@@ -7,14 +7,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:background="@color/appBackground">
 
 
         <TextView
             android:id="@+id/score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="your score"
+            android:text="YOUR SCORE"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_extrabold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,20 +28,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="You have finished the quiz!"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textColor="@color/grey"
             app:layout_constraintBottom_toTopOf="@+id/score"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go Home"
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/homeButton"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/score" />
+            app:layout_constraintTop_toBottomOf="@+id/score">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/doneButtonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_extrabold"
+                    android:padding="18dp"
+                    android:text="HOME"
+                    android:textColor="@color/grey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
